@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.5.0;
 
 contract Coin {
     // The keyword "public" makes those variables
@@ -22,7 +22,7 @@ contract Coin {
     }
 
     function send(address receiver, uint amount) public {
-      // require(balances[msg.sender] >= amount, "Insufficient funds");
+        // require(balances[msg.sender] >= amount, "Insufficient funds");
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
         emit Sent(msg.sender, receiver, amount);
